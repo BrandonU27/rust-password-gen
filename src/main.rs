@@ -1,15 +1,9 @@
-fn main() {
-    MainWindow::new().unwrap().run().unwrap();
-}
+mod password_logic;
 
-slint::slint! 
+use password_logic::PasswordGenerator;
+
+fn main()
 {
-    export component MainWindow inherits Window
-    {
-        Text
-        {
-            text: "hello world";
-            color: green;
-        }
-    }
+    let test = PasswordGenerator::new();
+    test.print_vecs();
 }
