@@ -1,3 +1,6 @@
+//
+// COMMENTS ARE A WORK IN PROGRESS
+//
 /*
  * Password Logic Object
  *
@@ -17,10 +20,10 @@ use rand::Rng;
  *  'lower_letters: Vec<char>': Stores a vector of lowercase letters.
  *  'numbers: Vec<char>': Stores a vector of numeric characters.
  *  'symbols: Vec<char>': Stores a vector of symbols.
-    'include_upper: bool': Flag to include uppercase letters.
-    'include_lower: bool': Flag to include lowercase letters.
-    'include_numbers: bool': Flag to include numeric characters.
-    'include_symbols: bool': Flag to include symbols.
+ *  'include_upper: bool': Flag to include uppercase letters.
+ *  'include_lower: bool': Flag to include lowercase letters.
+ *  'include_numbers: bool': Flag to include numeric characters.
+ *  'include_symbols: bool': Flag to include symbols.
  */
 pub struct PasswordGenerator {
     password_len: usize,
@@ -136,6 +139,7 @@ impl PasswordGenerator {
 
 /*
  * Unit Tests
+ * WORK IN PROGRESS
  */
 #[cfg(test)]
 mod tests {
