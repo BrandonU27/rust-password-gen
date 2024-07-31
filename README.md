@@ -1,6 +1,7 @@
 # Brandon's Simple Rust Password Generate
 
-This project aims to teach me the Rsut programming language adn Slint GUI while creating a useful tool for generating strong passwords. It's a personal project made for educational purposes.
+First Simple Rust Program.
+This project aims to teach me the Rust programming language and Slint GUI while creating a useful tool for generating strong passwords. It's a personal project made for educational purposes.
 
 ## Features
 - User can select the length of the generated password
