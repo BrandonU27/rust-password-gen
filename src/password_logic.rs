@@ -41,9 +41,6 @@ impl PasswordGenerator {
     /*
     * Constructor
     *
-    * Input:
-    *  None
-    *
     * Output:
     *  New PasswordGenerator Object with a default password length.
     *
@@ -71,16 +68,36 @@ impl PasswordGenerator {
      *
      * Input:
      *  'len: usize': New password length.
-     *
-     * Output:
-     *  None
-     *
+     * 
      * Comment:
      *  This method allows the user to set a custom password length by updating the 'password_len'
      *  field.
      */
     pub fn set_password_length(&mut self, len: usize) {
         self.password_len = len;
+    }
+
+    /*
+     * set_xxxx_flag()
+     * 
+     * Input:
+     *  'flag: bool': Flag state.
+     * 
+     * Comment:
+     *  This method enables users to configure the current state of each flag, controlling the character sets used to generate passwords.
+     *  Specifically, it determines the inclusion of characters, numbers, and symbols in teh generated password.
+     */
+    pub fn set_upper_flag(&mut self, flag: bool) {
+        self.include_upper = flag;
+    }
+    pub fn set_lower_flag(&mut self, flag: bool) {
+        self.include_lower = flag;
+    }
+    pub fn set_numbers_flag(&mut self, flag: bool) {
+        self.include_numbers = flag;
+    }
+    pub fn set_symbols_flag(&mut self, flag: bool) {
+        self.include_symbols = flag;
     }
 
     /*
@@ -162,5 +179,18 @@ mod tests {
         let password = generator.generate_password();
 
         assert!(!password.is_empty(), "Generated password should not be NULL");
+        assert_eq!(password.len(), 20);
+    }
+
+    #[test]
+    fn test_flag_setting() {
+        let mut generator = PasswordGenerator::new();
+        generator.set_upper_flag(false);
+        generator.set_lower_flag(true);
+        generator.set_numbers_flag(false);
+
+        assert_eq!(generator.include_upper, false);
+        assert_eq!(generator.include_lower, true);
+        assert_eq!(generator.include_numbers, false);
     }
 }
